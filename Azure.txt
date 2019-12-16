@@ -1,0 +1,125 @@
+WORKSPACE:
+	Fundamental unit of isolation
+	Each workspace has an identifier
+	LOCKED RESOURCES
+		Deployed in control plane and data plane
+	ASSETS
+		Notebooks
+		Libraries
+		Dashboards
+		
+	ACCESS CONTROL
+		Define access control on all assets
+		
+	LAUNCHING AZURE DATABRICKS
+		Storage account
+		Network security group
+		virtual network
+
+	DBFS
+		underlined storage for data bricks
+
+	SINGLE SIGN ON
+		Uses active directory for sign on
+	URL
+		Has url related to 
+		deploymentregion.azuredatabricks0=WORSPACEID
+
+CREATING A CLUSTER
+	INTERACTIVE CLUSTER
+		auto scale up on demand
+	JOB CLUSTER
+		terminates when the job ends
+
+	CLUSTER MODES
+		STANDARD MODE
+			Single user
+			No fault isolation
+			each user has a seperate cluster
+		    supports all languages
+		HIGH CONCURRENCY MODE
+			multiple users
+			fault isolcation
+			task preemption
+		    Helps is maximum utilization of clusters
+			Only supports python ,sql and R
+			
+	DBU DATA BRICKS UNIT
+		Databricks connectivity per hour
+		Shows how much cpu would be consumed per hour
+		
+	ENABLING AND DISABLING A CLUSTER
+		We can enable and disbale a cluster by specifying
+		enable autoscaling
+		terminate after minutes
+
+RUNTIME VERSION
+	Databricks clusters comes with pre installed version of
+	scala and spark
+	scala 2.11 and spark 2.4.3
+
+LOGS
+	We would be having event logs and driver logs
+	DRIVER LOGS
+GIT
+	We can link the azure data bricks to github or we can move to azure dev op service
+	
+ADDING USERS TO THE WORKSPACE
+	We can add users to the worksapce
+
+ADDING USERS
+	We can add users and assign them a workspace
+	
+MOUNT DATASOURCES
+	Data sources can be mount to DBFS
+	
+DBFS
+	File system of databricks
+
+AZURE SERVICE PRINCIPAL
+	Identity created for use with applications to access azure resources
+	Use service principal instead of a users active directory credentials
+	register an application with and create a secret
+	Use app id and secret to access Azure resources
+	
+EXTRACTION
+	Supports extraction from any data source that has JDBC
+	NoSQL Connectors like mongoDB,neo4j,cassandra
+	Supports azure data connectors
+	Azure SQL, SQL DW, cosmos DB
+	Mount azure data storage
+		Azure storage,Data store lake (Gen1 and Gen2)
+	
+ADL ACCOUNT
+	This is used to access the 
+
+CONFIGS FOR MAPPING
+	We need to map
+	client id
+	credentail
+	refersh.url (Directory Id is in the URL)
+	
+	note:Credentials should be used as key vault and data bricks secrets
+	
+MOUNTING
+	No need to share access to provide access everytime
+	Access storage using file system symantics instead of URL'scala
+	Files persist to storage
+	Mount azure blob storage using access keys or sas
+	Mount azure data lake using Service pricipal
+	Default one storage account is mounted to azure 
+	
+Note:One storage account is mounted by default
+	
+ACUTAL MOUNTING
+	After we specify the configs for mapping we need to specify the ADL
+	MOUNT POINT
+		We need to have a mount point
+		
+	Provide the configs
+	
+		source  : ADL
+		mountPoint : where it would be mounted
+		extraConfig : specify configs
+
+	
